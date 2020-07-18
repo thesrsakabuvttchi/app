@@ -4,10 +4,16 @@
   box-sizing: border-box;
 }
 
+h1{
+  text-align: center;
+}
+
 /* Remove margins and padding from the list */
 ul {
-  margin: 0;
+  margin: 5rem auto;
   padding: 0;
+  list-style: none;
+  max-width: 70%;
 }
 
 /* Style the list items */
@@ -49,3 +55,4 @@ ul li:hover {
 .addBtn:hover {
   background-color: #bbb;
 }
+

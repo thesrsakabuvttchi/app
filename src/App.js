@@ -5,7 +5,8 @@ import ToDo from './Components/toDoElement'
 function App() {
   return (
     <div>
-      <ul>
+      <h1>To Do List</h1>
+      <ul id = 'box'>
       <ToDo />
       <ToDo />
       <ToDo />
