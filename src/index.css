@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 
-/*Style heading*/
+/*Style heading and let it get centered*/
 h1{
   text-align: center;
 }
 
 /* Remove margins and padding from the list */
 ul {
-  margin: 5rem auto;
+  margin: 2rem auto;
   padding: 0;
   list-style: none;
   max-width: 70%;
@@ -37,23 +37,5 @@ ul li {
 /* Darker background-color on hover */
 ul li:hover {
   background: #ddd;
-}
-
-/* Style the "Add" button */
-.addBtn {
-  padding: 10px;
-  width: 25%;
-  background: #d9d9d9;
-  color: #555;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
-}
-
-.addBtn:hover {
-  background-color: #bbb;
 }
 

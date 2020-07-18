@@ -7,12 +7,7 @@ function App() {
     <div>
       <h1>To Do List</h1>
       <ul id = 'box'>
-      <ToDo />
-      <ToDo />
-      <ToDo />
-      <ToDo />
-      <ToDo />
-      <ToDo />
+      <ToDo message ='Learn React'/>
       </ul>
     </div>
   );

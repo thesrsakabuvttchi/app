@@ -4,8 +4,7 @@ class ToDo extends React.Component{
     render(){
         return(
             <li>
-                    <input type='checkbox'></input>
-                    <p style={{display : 'inline', margin : '3rem'}}>Placeholder</p>
+                <p style={{display : 'inline', margin : '1rem'}}>{this.props.message}</p>
             </li>
         );
     }
