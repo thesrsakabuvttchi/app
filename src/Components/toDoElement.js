@@ -2,10 +2,16 @@ import React from 'react';
 
 class ToDo extends React.Component{
 
+    constructor()
+    {
+        super();
+        this.state= {style : {display : 'inline', margin : '1rem', textDecoration : 'none'}}
+    }
+
     render(){
         return(
             <li>
-                <p style={{display : 'inline', margin : '1rem'}}>{this.props.message}</p>
+                <p style={this.state.style}>{this.props.message}</p>
             </li>
         );
     }
