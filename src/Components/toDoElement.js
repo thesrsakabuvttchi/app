@@ -10,7 +10,7 @@ class ToDo extends React.Component{
 
     clickHandler(){
         this.setState((PrevState)=>{
-            if(PrevState.style.textDecoration=='none')
+            if(PrevState.style.textDecoration==='none')
                 return({style : {display : 'inline', margin : '1rem', textDecoration : 'line-through'}});
             else
                 return({style : {display : 'inline', margin : '1rem', textDecoration : 'none'}});
