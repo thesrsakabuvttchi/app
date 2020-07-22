@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import ToDo from './Components/toDoElement';
-import ToDoItems from './Components/data';
-import Button from './button';
+import {ToDoItems,ToDel} from './Components/data';
+import Button from './Components/button';
 
 class App extends React.Component {
 
@@ -10,10 +10,22 @@ class App extends React.Component {
   {
     super();
     this.state ={
-      data : ToDoItems.map(data => <ToDo message={data.message}/>),
-      toDel : []
+      data : ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)
     };
+    this.delToDo = this.delToDo.bind(this);
   }
+
+  delToDo(){
+    ToDel.map( 
+        message => {
+            if(ToDoItems.map(data => data.message).indexOf(message)===-1)
+                return(null);
+           return(ToDoItems.splice(ToDoItems.map(data => data.message).indexOf(message),1));
+        }
+    );
+    ToDel.splice(0);
+    this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)});
+}
 
   render(){
     return (
@@ -22,6 +34,7 @@ class App extends React.Component {
         <ul id = 'box'>
           {this.state.data}
         </ul>
+        <Button onClick={this.delToDo}/>
       </div>
     );
   }

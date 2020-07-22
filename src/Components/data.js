@@ -1,4 +1,4 @@
-const ToDoItems =[
+let ToDoItems =[
     {
         id : 1,
         message : 'buy eggs tomrrow'
@@ -21,4 +21,6 @@ const ToDoItems =[
     },
 ]
 
-export default ToDoItems;
+var ToDel = [];
+
+export {ToDoItems,ToDel};
