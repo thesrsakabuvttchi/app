@@ -32,6 +32,10 @@ class App extends React.Component {
   addToDo(message){
     if(message==='')
       return(null);
+    if(ToDoItems.filter(data => data.message===message).length>0){
+      alert('please enter non-duplicate values');
+      return(null);
+    }
     ToDoItems.push({id: ToDoItems.length<1?1:ToDoItems[ToDoItems.length-1].id+1, message: message});
     document.cookie = "JSONData="+JSON.stringify(ToDoItems)+"; expires=Fri, 31 Dec 2037 23:59:59 GMT";
     this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)});
