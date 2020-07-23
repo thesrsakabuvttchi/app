@@ -25,15 +25,16 @@ class App extends React.Component {
         }
     );
     ToDel.splice(0);
+    document.cookie = "JSONData="+JSON.stringify(ToDoItems)+"; expires=Fri, 31 Dec 2037 23:59:59 GMT";
     this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)});
   }
 
   addToDo(message){
     if(message==='')
       return(null);
-    ToDoItems.push({id: ToDoItems[ToDoItems.length-1].id+1, message: message});
+    ToDoItems.push({id: ToDoItems.length<1?1:ToDoItems[ToDoItems.length-1].id+1, message: message});
+    document.cookie = "JSONData="+JSON.stringify(ToDoItems)+"; expires=Fri, 31 Dec 2037 23:59:59 GMT";
     this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)});
-    console.log(ToDoItems);
   }
 
   render(){

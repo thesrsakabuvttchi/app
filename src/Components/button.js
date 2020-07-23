@@ -29,8 +29,10 @@ class Button extends React.Component{
         return(
             <div style={{textAlign : 'center'}}>
                 <button style={ButtonStyle} onClick={this.props.del}>Delete Selected</button><br/>
-                <input type="text" onChange={this.getVal}/><br/>
-                <button style={ButtonStyle} onClick={()=>this.props.add(this.state.Input)}>Enter new</button>
+                <form onSubmit={()=>this.props.add(this.state.Input)}>
+                    <input type="text" onChange={this.getVal}/><br/>
+                    <button style={ButtonStyle}>Enter new</button>
+                </form>
             </div>
         );
     }
