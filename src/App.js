@@ -13,6 +13,7 @@ class App extends React.Component {
       data : ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)
     };
     this.delToDo = this.delToDo.bind(this);
+    this.addToDo = this.addToDo.bind(this);
   }
 
   delToDo(){
@@ -25,7 +26,15 @@ class App extends React.Component {
     );
     ToDel.splice(0);
     this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)});
-}
+  }
+
+  addToDo(message){
+    if(message==='')
+      return(null);
+    ToDoItems.push({id: ToDoItems[ToDoItems.length-1].id+1, message: message});
+    this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)});
+    console.log(ToDoItems);
+  }
 
   render(){
     return (
@@ -34,7 +43,7 @@ class App extends React.Component {
         <ul id = 'box'>
           {this.state.data}
         </ul>
-        <Button onClick={this.delToDo}/>
+        <Button del={this.delToDo} add={this.addToDo}/>
       </div>
     );
   }

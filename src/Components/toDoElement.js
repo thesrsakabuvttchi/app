@@ -26,7 +26,6 @@ class ToDo extends React.Component{
             else
                 return({style : {display : 'inline', margin : '1rem', textDecoration : 'none'}});
         });
-        console.log(ToDel);
     }
 
     render(){
