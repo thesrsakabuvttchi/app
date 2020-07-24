@@ -8,7 +8,7 @@ var InputStyle ={
     fontSize: '16px',
     margin: '2em',
     borderRadius : '5px',
-    width: '40%',
+    width: '60%'
   }
 
 class Button extends React.Component{
@@ -30,7 +30,7 @@ class Button extends React.Component{
         return(
             <div style={{textAlign : 'center'}}>
                 <form onSubmit={()=>this.props.add(this.state.Input)}>
-                    <input type="text" onChange={this.getVal} style ={InputStyle} placeholder="enter To-Do items here"/><br/>
+                    <input type="text" onChange={this.getVal} style ={InputStyle} placeholder="enter To-Do items"/><br/>
                 </form>
             </div>
         );
