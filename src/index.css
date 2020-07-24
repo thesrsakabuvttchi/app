@@ -14,7 +14,7 @@ ul {
   margin: 2rem auto;
   padding: 0;
   list-style: none;
-  max-width: 70%;
+  width: 70%;
 }
 
 /* Style the list items */
@@ -22,10 +22,10 @@ ul li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
-  background: #eee;
+  background: #e1b382;
   font-size: 18px;
   transition: 0.2s;
-  border-bottom: #f9f9f9 2px solid;
+  border-bottom: #2d545e 2px solid;
 
   /* make the list items unselectable */
   -webkit-user-select: none;
@@ -36,6 +36,6 @@ ul li {
 
 /* Darker background-color on hover */
 ul li:hover {
-  background: #ddd;
+  background: #c89666;
 }
 

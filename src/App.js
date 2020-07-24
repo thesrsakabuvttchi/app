@@ -10,7 +10,7 @@ class App extends React.Component {
   {
     super();
     this.state ={
-      data : ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)
+      data : []
     };
     this.delToDo = this.delToDo.bind(this);
     this.addToDo = this.addToDo.bind(this);
@@ -26,29 +26,40 @@ class App extends React.Component {
     );
     ToDel.splice(0);
     document.cookie = "JSONData="+JSON.stringify(ToDoItems)+"; expires=Fri, 31 Dec 2037 23:59:59 GMT";
-    this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)});
+    this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id} del={this.delToDo}/>)});
   }
 
   addToDo(message){
     if(message==='')
       return(null);
-    if(ToDoItems.filter(data => data.message===message).length>0){
+    else if(ToDoItems.filter(data => data.message===message).length>0){
       alert('please enter non-duplicate values');
+      return(null);
+    }
+    else if(message.indexOf(';')!== -1){
+      alert('semicolons break the script, pls refrain from using them');
       return(null);
     }
     ToDoItems.push({id: ToDoItems.length<1?1:ToDoItems[ToDoItems.length-1].id+1, message: message});
     document.cookie = "JSONData="+JSON.stringify(ToDoItems)+"; expires=Fri, 31 Dec 2037 23:59:59 GMT";
-    this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id}/>)});
+    this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id} del={this.delToDo}/>)});
+  }
+
+  componentDidMount()
+  {
+    this.setState ({data: ToDoItems.map(data => <ToDo message={data.message} key={data.id} del={this.delToDo}/>)});
   }
 
   render(){
     return (
-      <div>
-        <h1>To Do List</h1>
-        <ul id = 'box'>
+      <div style={{backgroundColor: '#12343b',height: '100%', position: 'absolute', left: '0px', width: '100%', overflow: 'auto'}}>
+        <h1 style={{backgroundColor: '#c89666', margin: '0px', padding: '0.5em'}}>
+            To Do List
+        </h1>
+        <ul id = 'box' style={{margin: '1.5em auto', padding: '2em', backgroundColor: '#2d545e'}}>
           {this.state.data}
         </ul>
-        <Button del={this.delToDo} add={this.addToDo}/>
+        <Button add={this.addToDo}/>
       </div>
     );
   }

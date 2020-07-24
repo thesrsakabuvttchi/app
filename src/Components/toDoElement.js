@@ -20,18 +20,14 @@ class ToDo extends React.Component{
             ToDel.push(this.props.message);
         else
             ToDel.splice(ToDel.indexOf(this.props.message),1); 
-        this.setState((PrevState)=>{
-            if(PrevState.style.textDecoration==='none')
-                return({style : {display : 'inline', margin : '1rem', textDecoration : 'line-through'}});
-            else
-                return({style : {display : 'inline', margin : '1rem', textDecoration : 'none'}});
-        });
+        this.props.del();
     }
 
     render(){
         return(
-            <li onClick={this.clickHandler}>
+            <li>
                 <p style={this.state.style}>{this.props.message}</p>
+                <img src="https://img.icons8.com/metro/26/000000/trash.png" style={{float:"right"}}  onClick={this.clickHandler} alt=''/>
             </li>
         );
     }
