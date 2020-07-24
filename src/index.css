@@ -23,6 +23,7 @@ ul li {
   position: relative;
   padding: 12px 8px 12px 40px;
   background: #e1b382;
+  margin: 1em;
   font-size: 18px;
   transition: 0.2s;
   border-bottom: #2d545e 2px solid;

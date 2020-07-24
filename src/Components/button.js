@@ -1,13 +1,14 @@
 import React from 'react';
 
-var ButtonStyle ={
-    backgroundColor: '#4CAF50', /* Green */
-    border: 'none',
-    color: 'white',
+var InputStyle ={
+    backgroundColor: '#e1b382',
+    border: '#2d545e 25px solid',
     padding: '15px 32px',
     textAlign: 'center',
     fontSize: '16px',
-    margin: '5px',
+    margin: '2em',
+    borderRadius : '5px',
+    width: '40%',
   }
 
 class Button extends React.Component{
@@ -29,7 +30,7 @@ class Button extends React.Component{
         return(
             <div style={{textAlign : 'center'}}>
                 <form onSubmit={()=>this.props.add(this.state.Input)}>
-                    <input type="text" onChange={this.getVal}/><br/>
+                    <input type="text" onChange={this.getVal} style ={InputStyle} placeholder="enter To-Do items here"/><br/>
                 </form>
             </div>
         );

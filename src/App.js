@@ -57,11 +57,15 @@ class App extends React.Component {
             To Do List
         </h1>
         {ToDoItems.length>0?
-        <ul id = 'box' style={{margin: '1.5em auto', padding: '2em', backgroundColor: '#2d545e'}}>
+        <ul id = 'box' style={{margin: '1.5em auto',padding:'1em', backgroundColor: '#2d545e'}}>
           {this.state.data}
         </ul>
         :null}
         <Button add={this.addToDo}/>
+        <div style={{height:'57%'}}></div>
+        <footer style={{backgroundColor: '#101010', color:'white',float: 'bottom',padding:'2em',width: '100%'}}>
+          copyleft © thesrsbuvttchi
+        </footer>
       </div>
     );
   }
