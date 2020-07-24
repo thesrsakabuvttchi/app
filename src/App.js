@@ -56,9 +56,11 @@ class App extends React.Component {
         <h1 style={{backgroundColor: '#c89666', margin: '0px', padding: '0.5em'}}>
             To Do List
         </h1>
+        {ToDoItems.length>0?
         <ul id = 'box' style={{margin: '1.5em auto', padding: '2em', backgroundColor: '#2d545e'}}>
           {this.state.data}
         </ul>
+        :null}
         <Button add={this.addToDo}/>
       </div>
     );
