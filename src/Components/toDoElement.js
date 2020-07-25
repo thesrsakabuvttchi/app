@@ -25,8 +25,8 @@ class ToDo extends React.Component{
 
     render(){
         return(
-            <li style={{overflowWrap: 'break-word', overflow: 'auto'}}>
-                <div style={{overflowWrap: 'break-word'}}>
+            <li style={{overflowWrap: 'break-word', overflow: 'auto',padding: "0.5em", display: "flex",alignItems: "center"}}>
+                <div style={{overflowWrap: 'break-word', flex: 1}}>
                     <p style={this.state.style}>{this.props.message}</p>
                 </div>
                 <img src="https://img.icons8.com/metro/26/000000/trash.png" style={{float:"right"}}  onClick={this.clickHandler} alt=''/>
