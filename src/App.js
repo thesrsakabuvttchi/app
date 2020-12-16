@@ -62,7 +62,7 @@ class App extends React.Component {
         </ul>
         :null}
         <Button add={this.addToDo}/>
-        <div style={{height:'63%'}}></div>
+        <div style={{height:'90%'}}></div>
         <footer style={{backgroundColor: '#101010', color:'white',float: 'bottom',padding:'2em',width: '100%'}}>
           copyleft © thesrsbuvttchi
         </footer>
